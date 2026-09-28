@@ -1,0 +1,11 @@
+# Mayhem target: PyTime human date/time string parser (Atheris/libFuzzer harness).
+# The cmd binary is the compiled ELF launcher that drives mayhem/fuzz_time.py; Atheris
+# instruments the pytime library so the run records coverage (edges).
+project: savantenvs/PyTime
+target: fuzz-time-buggy-mhh-run-3
+
+cmds:
+  - cmd: /mayhem/pytime_fuzzer
+    libfuzzer: true
+
+# origin: https://app.mayhem.security/mayhemheroes/pytime/fuzz-time/3
